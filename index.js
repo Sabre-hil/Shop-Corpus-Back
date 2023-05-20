@@ -1,1 +1,1 @@
-const name = 'Adam'
+const name = 'Adamadze'
