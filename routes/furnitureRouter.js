@@ -1,8 +1,9 @@
 const Router = require('express');
+const FurnitureController = require('../controllers/furnitureController');
 
 const router = new Router();
 
-router.get('/');
-router.get('/:id');
+router.get('/', FurnitureController.getAll);
+router.get('/:id', FurnitureController.getOne);
 
 module.exports = router;
