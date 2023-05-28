@@ -17,5 +17,7 @@ module.exports = {
     'import/no-dynamic-require': 'warn',
     'implicit-arrow-linebreak': 'warn',
     'operator-linebreak': 'warn',
+    'class-methods-use-this': 'off',
+    'import/no-extraneous-dependencies': 'off',
   },
 };
