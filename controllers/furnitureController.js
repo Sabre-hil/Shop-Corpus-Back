@@ -11,7 +11,8 @@ class FurnitureController {
       });
       return res.json(furnitures);
     } catch (error) {
-      return res.status(400).end();
+      // return res.status(400).end();
+      return res.status(ApiError.badReques());
     }
   }
 
@@ -21,7 +22,11 @@ class FurnitureController {
       if (!id) {
         return next(ApiError.badReques('Не задан ID'));
       }
-      const furniture = await Furniture.findByPk(+id);
+      const furniture = await Furniture.findByPk(+id, {
+        include: {
+          model: Device_Images,
+        },
+      });
       return res.json(furniture);
     } catch (error) {
       return res.status(400).end();
@@ -30,11 +35,3 @@ class FurnitureController {
 }
 
 module.exports = new FurnitureController();
-// async check(req, res, next) {
-//   const { id } = req.query;
-//   if (!id) {
-//     return next(ApiError.badReques('Не задан ID'));
-//   }
-//   return res.json(id);
-// }
-// }

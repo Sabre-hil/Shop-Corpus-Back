@@ -1,5 +1,3 @@
-/* eslint-disable prefer-const */
-/* eslint-disable prefer-template */
 const uuid = require('uuid');
 const path = require('path');
 const { Device_Images } = require('../db/models');
@@ -9,7 +7,7 @@ class ImagesController {
     try {
       const { img } = req.files;
       const { id } = req.params;
-      let fileName = `${uuid.v4()}.jpg`;
+      const fileName = `${uuid.v4()}.jpg`;
       img.mv(path.resolve(__dirname, '..', 'static', fileName));
 
       const image = await Device_Images.create({
