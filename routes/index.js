@@ -7,7 +7,7 @@ const imagesRouter = require('./imagesRouter');
 const router = new Router();
 
 router.use('/user', userRouter);
-router.use('/furnitures', furnitureRouter);
+router.use('/furniture', furnitureRouter);
 router.use('/review', reviewRouter);
 router.use('/images', imagesRouter);
 
